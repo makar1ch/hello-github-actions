@@ -1,0 +1,23 @@
+name: Hello GitHub Action
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+
+      - name: Run script hello.py
+        run: python 04.Git.CI/hello.py
+
